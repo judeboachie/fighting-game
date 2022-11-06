@@ -1,10 +1,10 @@
 A 2 player fighting game.
 
 PLAYER 1 CONTROLS:
-A - Move left
-D - Move right
-W - Jump
-SPACE - Attack
+A - Move left.
+D - Move right.
+W - Jump.
+SPACE - Attack.
 
 
 
