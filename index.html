@@ -1,0 +1,71 @@
+<head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+	<style>
+		* {
+			box-sizing:  border-box;
+			/*This prevents padding from being taken into effect when calculating the width of element. You should probably have this on every website you make*/
+			font-family: 'Press Start 2P', cursive;
+		}
+	</style>
+</head>
+<body>
+	<!-- Main Container for Canvas-->
+	<div style="position: relative; display: inline-block;">
+		<!-- Secondary Container for Health bars and timer -->
+		<div style="position: absolute; display: flex; width: 100%; align-items: center; padding: 20px;"> <!--A child element with an absolute position is taken out of the normal document flow. This means that other elements, such as the canvas, will not be affected by this element's width or height-->
+
+			<!-- PLAYER HEALTH -->
+			<div style="
+				position: relative;
+				width: 100%; /* This parent div will always be the height of the child div (30px in this case) as long as the child div doesn't have a position of absolute. Assigning height here will cause an overlap issue*/
+				display: flex; 
+				justify-content: flex-end;  /*justify-content: flex-end alins the contents of the div to the right, that way, the player's health bar will decrease towards the right*/
+				border-top: 4px solid white;
+				border-left: 4px solid white;
+				border-bottom: 4px solid white;
+				"
+			> 
+				<div style="background-color: red; height: 30px; width: 100%;"></div>
+				<div id="playerHealth" style="position: absolute; background: #818CF8; top: 0; right: 0; bottom: 0; width: 100%;"></div>
+			</div>
+			<!-- TIMER -->
+			<div id="timer" style="
+				background-color: black; 
+				width: 100px; 
+				height: 50px; 
+				flex-shrink: 0; 
+				display: flex; 
+				align-items: center; 
+				justify-content: center; 
+				color: white;
+				border: 4px solid white
+				"
+			>
+				60
+			</div>
+			<!-- ENEMY HEALTH -->
+			<div style="
+				position: relative;
+				width: 100%;
+				border-top: 4px solid white;
+				border-bottom: 4px solid white;
+				border-right: 4px solid white;
+				"
+			>
+				<div style="background-color: red; height: 30px;"></div>
+				<div id="enemyHealth" style="position: absolute; background: #818CF8; top: 0; right: 0; bottom: 0; left: 0;"></div>
+			</div>
+		</div>
+		<!-- Match Result Text-->
+		<div id="displayText" style="position: absolute; color: white; align-items: center; justify-content: center; top: 0; right: 0; bottom: 0; left: 0; display:none; ">Tie</div>
+		<canvas></canvas>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="js/utils.js"></script>
+	<script src="js/classes.js"></script>
+	<script src="index.js"></script>
+</body>
