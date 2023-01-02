@@ -1,3 +1,5 @@
+https://judeboachie.github.io/fighting-game/
+
 A 2 player fighting game made with HTML Canvas.
 
 PLAYER 1 CONTROLS: <br/>
